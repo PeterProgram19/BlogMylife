@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="formacao.html">Formação Educacional</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contato</h1>
+        <div class="formulario">
+        <form action="processar_formulario.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="button" onclick="EnviarDados()">Enviar</button>
+        </div>    
+        </form>
+
+        <script>
+            function EnviarDados(){
+                //capturar os dados dos campos
+                let nome = document.getElementById("nome").value;
+                let email = document.getElementById("email").value;
+                let mensagem = document.getElementById("mensagem").value;
+
+                //armazenar os valores  em localstorage
+                localStorage.setItem("nome", nome);
+                localStorage.setItem("email", email);
+                localStorage.setItem("mensagem", mensagem);
+            }
+        </script>
+        
+        <p>Qualquer duvida ou interesse, coloque seu nome e e-mail e sua duvida no campo(mensagem) logo entrarei em contato.</p>
+        <p>Logo estarei atualizando meu blog, em breve tera mais coisas sobre mim.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pedro</p>
+    </footer>
+</body>
+</html>
